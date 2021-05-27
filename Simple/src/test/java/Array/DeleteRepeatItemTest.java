@@ -8,13 +8,13 @@ import org.junit.Test;
  * @Version 1.0
  * @Description
  */
-public class DeleteRepeatItem {
+public class DeleteRepeatItemTest {
 
     @Test
     public void removeDuplicatesTest()
     {
-        DeleteRepeatItem deleteRepeatItem=new DeleteRepeatItem();
         int[] items={1,2,3,3,3,4};
+        DeleteRepeatItem deleteRepeatItem =new DeleteRepeatItem();
 
         int conut= deleteRepeatItem.removeDuplicates(items);
     }

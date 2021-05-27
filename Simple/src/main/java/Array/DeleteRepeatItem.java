@@ -30,12 +30,4 @@ public class DeleteRepeatItem {
         }
     }
 
-    @Test
-    public void test()
-    {
-        int[] nums={0,1,1,3,4,5,8};
-
-        int count=removeDuplicates(nums);
-
-    }
 }
