@@ -17,5 +17,9 @@ public class DeleteRepeatItemTest {
         DeleteRepeatItem deleteRepeatItem =new DeleteRepeatItem();
 
         int conut= deleteRepeatItem.removeDuplicates(items);
+
+        String ejz=Integer.toHexString(conut);
+
+        int t=(10>>3)&1;
     }
 }
