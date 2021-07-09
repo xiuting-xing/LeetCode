@@ -1,5 +1,8 @@
 package Array;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @Author ken_xing
  * @Date 2021/5/28--14:15
@@ -51,6 +54,38 @@ public class TwoSum {
             }
         }
         return answer;
+    }
+
+    /**
+     * 第三种方法，for循环中双参数
+     */
+    public int[] getTwoNums2(int[] nums,int target)
+    {
+        int[] answer=new int[2];
+
+        for (int i=0,j=i+1;i<nums.length-1;i++,j++) {
+            if (nums[i] + nums[j] == target) {
+                answer[0] = i;
+                answer[1] = j;
+                break;
+            }
+        }
+        return answer;
+    }
+
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer,Integer> map=new HashMap<Integer, Integer>();
+        int[] nums2 = new int[2];
+        for(int i=0;i<nums.length;i++){
+            int num2=target-nums[i];
+            if(map.containsKey(num2)){
+                nums2[0]=map.get(num2);
+                nums2[1]=i;
+            }else {
+                map.put(nums[i],i);
+            }
+        }
+        return nums2;
     }
 
 }
