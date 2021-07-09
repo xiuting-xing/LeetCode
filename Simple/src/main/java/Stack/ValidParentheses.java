@@ -1,8 +1,6 @@
 package Stack;
 
-import java.util.Dictionary;
-import java.util.Enumeration;
-import java.util.HashMap;
+import java.util.*;
 
 /**
  * @Author ken_xing
@@ -39,49 +37,39 @@ public class ValidParentheses {
         }
         else
         {
-            Dictionary<Character,Character> dic=new Dictionary<Character, Character>() {
-                @Override
-                public int size() {
-                    return 0;
-                }
+            Stack<Character> stack=new Stack<Character>();
+            Map map=new HashMap();
 
-                @Override
-                public boolean isEmpty() {
-                    return false;
-                }
-
-                @Override
-                public Enumeration<Character> keys() {
-                    return null;
-                }
-
-                @Override
-                public Enumeration<Character> elements() {
-                    return null;
-                }
-
-                @Override
-                public Character get(Object key) {
-                    return null;
-                }
-
-                @Override
-                public Character put(Character key, Character value) {
-                    return null;
-                }
-
-                @Override
-                public Character remove(Object key) {
-                    return null;
-                }
-            };
+            map.put("}","{");
+            map.put("]","[");
+            map.put(")","(");
 
             for (int i=0;i<s.length();i++) {
 
+                if (map.containsKey(s.charAt(i)))
+                {
+                    if (!stack.empty()&&stack.peek()==map.get(s.charAt(i)))
+                    {
+                        stack.pop();
+                    }
+                    else
+                    {
+                        stack.push(s.charAt(i));
+                    }
+                }
+                else
+                {
+                    stack.push(s.charAt(i));
+                }
             }
-
-            return true;
-
+            if (stack.size()==0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
