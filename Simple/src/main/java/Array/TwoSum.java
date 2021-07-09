@@ -7,7 +7,7 @@ import java.util.Map;
  * @Author ken_xing
  * @Date 2021/5/28--14:15
  * @Version 1.0
- * @Description 从数组中取出两数，利郎叔之和等于目标数
+ * @Description 从数组中取出两数使该两数之和等于目标数
  */
 public class TwoSum {
     /**
