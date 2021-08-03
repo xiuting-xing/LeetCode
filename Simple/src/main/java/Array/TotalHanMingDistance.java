@@ -17,7 +17,7 @@ public class TotalHanMingDistance {
         for(int i=0; i< 30; i++)
         {
             int c=0;
-            for (int j:nums)
+                for (int j:nums)
             {
                 c+=(j>>i)&1;
             }
